@@ -50,10 +50,13 @@ namespace KCToolkit{
 					foreach(string dependancy in manifest.GetAllDependencies(bundle)){
 						AssetBundle.LoadFromFile(assetBundlePath + "/" + dependancy);
 					}
-					
+
+					manifestAssetBundle.Unload(false);
 					return AssetBundle.LoadFromFile(assetBundlePath + "/" + bundle);
 				}
 			}
+
+			manifestAssetBundle.Unload(false);
 
 			return null;
 		}
