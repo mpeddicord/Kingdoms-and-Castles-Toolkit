@@ -54,6 +54,8 @@ namespace KCToolkit{
 					return AssetBundle.LoadFromFile(assetBundlePath + "/" + bundle);
 				}
 			}
+			
+			manifestAssetBundle.Unload(false);
 
 			return null;
 		}
